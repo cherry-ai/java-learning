@@ -2,6 +2,7 @@ package com.learn.java8;
 
 import org.junit.Test;
 
+import java.io.PrintStream;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
@@ -76,6 +77,27 @@ public class LambdaTest {
 
     void happy(double money,Consumer<Double> consumer){
         consumer.accept(money);
+
+    }
+
+    /**
+     * 方法引用：
+     * 如果Lambda体中的内容有方法已经实现了，可以使用方法引用
+     * Lambda表达式的另外一种表现形式
+     *
+     */
+    @Test
+    public void testLambdaMethodRef(){
+
+        PrintStream ps = System.out;
+        Consumer<String> consumer = (x)-> ps.println(x);
+
+        PrintStream ps1 = System.out;
+        Consumer<String> consumer1 = ps1::println;
+        consumer1.accept("方法引用");
+
+        Consumer<String> consumer2 = System.out::println;
+        consumer2.accept("方法引用2");
 
     }
 
