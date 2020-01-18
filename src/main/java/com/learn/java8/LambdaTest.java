@@ -47,6 +47,7 @@ public class LambdaTest {
 
         //3 有一个参数 小括号可以不写
         consumer = y->System.out.println(y);
+        consumer.accept("you璀璨3");
 
         //4 有2+ 参数，lambda体有多条语句,使用大括号
         Comparator<Integer> comparator = (i, j)->{
